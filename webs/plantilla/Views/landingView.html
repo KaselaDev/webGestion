@@ -1,0 +1,266 @@
+    <style>
+        @font-face {
+            font-family: "neon";
+            src: url(./NEON____.TTF);
+        }
+        *{
+            margin: 0;
+        }
+        *::selection{
+            background-color: gold;
+            color: #000;
+        }
+        body{
+            font-family: "inter";
+        }
+        header{
+            background-color: black;
+            color: #ff5e5e;
+            display: flex;
+            height: 100px;
+            position: relative;
+        }
+        header img{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            height: 100%;
+        }
+        .inicio{
+            background-image: url("https://www.beloleum.com/wp-content/uploads/2023/11/hamburguesas-caseras-gourmet.png");
+            padding: 35px;
+            height: 550px;
+            color: #ffffff;
+            font-weight: 800;
+        }
+        .inicio h3{
+            font-size: 30px;
+            display: block;
+            width: 60%;
+            background-color: #00000067;
+            padding: 15px;
+            border-radius: 25px;
+        }
+        .productos{
+            display: flex;
+            flex-wrap: wrap;
+            position: relative;
+            left: 50%;
+            margin-top: 2rem;
+            transform: translateX(-50%);
+        }
+        .productCard{
+            width: 250px;
+            height: 250px;
+            border: 1px solid;
+            border-radius: 30px;
+            justify-items: center;
+            margin: 10px;
+        }
+        .productCard img{
+            position: relative;
+            left: 50%;
+            transform: translate(-50%);
+            border-radius: 20px 20px 0 0;
+            width: 100%;
+            height: 150px;
+        }
+        .productCard:hover{
+            transition: 350ms;
+            transform: scale(1.05);
+        }
+        .productCard h4{
+            position: relative;
+            left: 5px;
+        }
+        .productCard p{
+            position: relative;
+            left: 10px;
+        }
+        .sucursal{
+            padding: 30px;
+        }
+        .iframe{
+            border: #000 1 solid;
+            margin: 10px;
+            width: 100%;
+            left: -5px;
+        }
+        .contact{
+            margin: 75px;
+            padding: 2rem;
+            background-color: #333;
+            color: #fff;
+            border-radius: 35px;
+            font-size: 25px;
+            position: relative;
+            max-width: 500px;
+            left: 50%;
+            transform: translateX(-60%);
+        }
+        .contact p{
+            margin: .5rem;
+            font-size: 1.25rem;
+        }
+        .bn39 {
+          background-image: linear-gradient(135deg, #ffbb00, #ff8d0b);
+          border-radius: 6px;
+          box-sizing: border-box;
+          color: #ffffff;
+          display: block;
+          height: 50px;
+          font-size: 1.4em;
+          font-weight: 600;
+          padding: 4px;
+          position: relative;
+          text-decoration: none;
+          width: 7em;
+          z-index: 2;
+        }
+
+        .bn39:hover {
+          color: #fff;
+        }
+
+        .bn39 .bn39span {
+          align-items: center;
+          background: #0e0e10;
+          border-radius: 6px;
+          display: flex;
+          justify-content: center;
+          height: 100%;
+          transition: background 0.5s ease;
+          width: 100%;
+        }
+
+        .bn39:hover .bn39span {
+          background: transparent;
+        }
+        footer{
+            width: 100%;
+            background-color: #444;
+            color: rgb(172, 172, 172);
+            height: 100px;
+        }
+        footer h5{
+            display: block;
+            position: relative;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        input{
+            border-radius: 10px;
+            font-size: 20px;
+        }
+        textarea{
+            width: 100%;
+            height: 140px;
+            border-radius: 10px;
+            font-size: 20px;
+        }
+        .buttons{
+            display: flex;
+            justify-content: space-between;
+        }
+        .productoh2{
+            margin: 25px;
+        }
+        .sucursal{
+            margin: 0 100px;
+        }
+        .sucursalCard{
+            border: solid 1px;
+            display: flex;
+            margin-bottom: 20px;
+            border-radius: 20px;
+        }
+        .sucursalCard iframe{
+            border-radius: 25px 0 0 25px;
+        }
+        .sucDesc{
+            background-color: #f5ddbe;
+            width: 100%;
+            padding: 25px;
+            border-radius: 0 25px 25px 0;
+        }
+        .sucDesc h3{
+            margin-bottom: 30px;
+            font-size: 30px;
+        }
+        div a{
+            display: none;
+        }
+        .ig{
+            display: block !important;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>{{nombre}}</h1>
+    </header>
+    <div class="inicio">
+        <h3>¡Descubre el sabor inigualable en nuestro restaurante de comida rápida! En cada bocado, te transportamos a un mundo de delicias que despiertan tus sentidos y satisfacen tus antojos más exigentes.</h3>
+    </div>
+    <h2 class="productoh2">Producto</h2>
+    <div class="productos"><div class="productos">
+        
+        <div class="productCard">
+            <img src="https://resizer.glanacion.com/resizer/v2/hamburguesa-blt-de-john-john-burger-bacon-lettuce-RHVGX3MHVRB7VGEXBEVCCZHW5I.jpg?auth=53776ee5a203ae1fbe457df3473f7c2d9470016ad51a458c73c5b950966a4f57&width=768&quality=70&smart=false" alt="">
+            <h4>Hamburguesa</h4>
+            <p>Deliciosa hamburguesa con carne jugosa, chedar y mas ingredientes.</p>
+        </div>
+        <div class="productCard">
+            <img src="https://www.lavanguardia.com/files/article_main_microformat/files/fp/uploads/2021/03/30/6063031b90a87.r_d.1083-871-0.jpeg" alt="">
+            <h4>Pizza</h4>
+            <p>Pizza con una variedad de ingredientes.</p>
+        </div>
+        <div class="productCard">
+            <img src="https://myplate-prod.azureedge.us/sites/default/files/styles/recipe_525_x_350_/public/2020-10/EasyGreekSalad527x323.jpg?itok=KInBpWEf" alt="">
+            <h4>Ensalada</h4>
+            <p>De las mejores papafritas artesanales.</p>
+        </div>
+        <div class="productCard">
+            <img src="https://cuk-it.com/wp-content/uploads/2022/09/milanesa-napo-stories-5.webp" alt="">
+            <h4>Napolitana</h4>
+            <p>Tenemos Coca-cola original o hasta Coca-cola Zero.</p>
+        </div>
+    </div></div>
+    <div class="sucursal">
+        <h2>Sucursales</h2>
+        <br>
+        <div class="sucursalCard">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d488.8636263414249!2d-58.72710885227209!3d-34.48591091182228!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bca2854bf6ae25%3A0xdf56298432f33dd9!2sSupermercados%20Oriente!5e0!3m2!1ses-419!2sar!4v1718060311170!5m2!1ses-419!2sar" width="50%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="sucDesc">
+                <h3>Grand bourg</h3>
+            <p>Un lugar donde la pasión por la gastronomía y la cultura urbana se encuentran en perfecta armonía. Al entrar en Negro Food, te recibe un ambiente moderno y acogedor, con una decoración elegante que combina detalles industriales y elementos de diseño contemporáneo. Las paredes de ladrillo visto, las mesas de madera oscura y las lámparas colgantes crean un espacio que es tanto chic como cómodo, ideal para disfrutar de una buena comida en cualquier momento del día.</p>
+            </div>
+        </div>
+        <div class="sucursalCard">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d488.8636263414249!2d-58.72710885227209!3d-34.48591091182228!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bca2854bf6ae25%3A0xdf56298432f33dd9!2sSupermercados%20Oriente!5e0!3m2!1ses-419!2sar!4v1718060311170!5m2!1ses-419!2sar" width="50%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="sucDesc">
+                <h3>Tortuguitas</h3>
+            <p>Un lugar donde la pasión por la gastronomía y la cultura urbana se encuentran en perfecta armonía. Al entrar en Negro Food, te recibe un ambiente moderno y acogedor, con una decoración elegante que combina detalles industriales y elementos de diseño contemporáneo. Las paredes de ladrillo visto, las mesas de madera oscura y las lámparas colgantes crean un espacio que es tanto chic como cómodo, ideal para disfrutar de una buena comida en cualquier momento del día.</p>
+            </div>
+        </div>
+    </div>
+    <section id="contact" class="contact">
+        <h2>Contacto</h2>
+        <p>Si quiere puede contactarnos a continuacion por medio de nuestro numero de contacto de (+54 11 0986-2342), o por nuestro Gmail negrofood@gmail.com</p>
+        <br><label for="email">Introduzca su Email:</label>
+        <input type="email" id="email" name="email" required><br>
+        <label for="mensaje">Introduzca su Mensaje:</label>
+        <br><textarea id="mensaje" name="mensaje" required></textarea>
+        <div class="buttons">
+            <a class="bn39" href="/"><span class="bn39span">Button</span></a>
+        <a href="https://www.instagram.com/" class="ig"><img src="./img/ig.png" alt="" width="50px"></a>
+        </div>
+    </section>
+    <footer>
+        <h5>Negros food © 2024</h5>
+    </footer>
+</body>
+</html>

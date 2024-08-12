@@ -1,0 +1,127 @@
+@font-face {
+    font-family: "iconUser";
+    src: url(./monof55.ttf);
+}
+@font-face {
+    font-family: "mono1";
+    src: url(./monoMMM_5.ttf);
+}
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    position: fixed;
+    background-color: aqua;
+    height: 60px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 60px 220px auto auto 60px 60px;
+    grid-template-rows: 2fr;
+    grid-column-gap: 1px;
+    justify-items: stretch;
+    align-items: stretch;
+    user-select: none;
+}
+header img{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    top: 5px;
+    left: 5px;
+    border-radius: 10px;
+}
+header h1{
+    margin: 0;
+    place-content: center;
+    text-align: center;
+    font-size: 30px;
+}
+.irLanding{
+    position: relative;
+}
+.irLanding .content{
+    position: relative;
+    height: 45px;
+    border-radius: 15px;
+    background-color: rgb(255, 231, 98);
+    top: 50%;
+    transform: translateY(-50%);
+}
+.irLanding .content h4{
+    position: relative;
+    margin: 0;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    font-family: "mono1";
+}
+.hiUser{
+    position: relative;
+}
+.hiUser .content{
+    position: relative;
+    height: 45px;
+    border-radius: 15px;
+    background-color: rgb(255, 231, 98);
+    top: 50%;
+    transform: translateY(-50%);
+}
+.hiUser .content h4{
+    position: relative;
+    margin: 0;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    font-family: "mono1";
+}
+.fa-bell{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    right: 70px;
+}
+.fa-bell .cantNoti{
+    position: absolute;
+    height: 1rem;
+    width: auto;
+    border-radius: 50px;
+    background-color: red;
+    right: -8px;
+    top: -25px;
+    padding: 3px;
+}
+.fa-bell .cantNoti p{
+    color: white;
+    margin: 0;
+    font-size: 11px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.iconUser{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-color: gold;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.iconUser p{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    margin: 0;
+    font-family: "iconUser";
+    font-size: 30px;
+}
