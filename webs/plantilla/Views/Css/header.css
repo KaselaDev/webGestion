@@ -1,28 +1,16 @@
-@font-face {
-    font-family: "iconUser";
-    src: url(./monof55.ttf);
-}
-@font-face {
-    font-family: "mono1";
-    src: url(./monoMMM_5.ttf);
-}
-body{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 header{
     position: fixed;
-    background-color: aqua;
+    background-color: var(--bgHeader);
     height: 60px;
     width: 100%;
     display: grid;
-    grid-template-columns: 60px 220px auto auto 60px 60px;
+    grid-template-columns: 60px 200px auto max-content 60px 60px;
     grid-template-rows: 2fr;
     grid-column-gap: 1px;
     justify-items: stretch;
     align-items: stretch;
     user-select: none;
+    font-family: "Roboto Mono";
 }
 header img{
     position: relative;
@@ -44,7 +32,7 @@ header h1{
 .irLanding .content{
     position: relative;
     height: 45px;
-    border-radius: 15px;
+    border-radius: 8px;
     background-color: rgb(255, 231, 98);
     top: 50%;
     transform: translateY(-50%);
@@ -56,10 +44,11 @@ header h1{
     top: 50%;
     transform: translateY(-50%);
     font-size: 18px;
-    font-family: "mono1";
 }
 .hiUser{
     position: relative;
+    display: flex;
+    justify-content: end;
 }
 .hiUser .content{
     position: relative;
@@ -68,6 +57,8 @@ header h1{
     background-color: rgb(255, 231, 98);
     top: 50%;
     transform: translateY(-50%);
+    width: fit-content;
+    padding: 0 20px;
 }
 .hiUser .content h4{
     position: relative;
@@ -76,14 +67,12 @@ header h1{
     top: 50%;
     transform: translateY(-50%);
     font-size: 18px;
-    font-family: "mono1";
 }
 .fa-bell{
     position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    right: 70px;
 }
 .fa-bell .cantNoti{
     position: absolute;
@@ -105,23 +94,48 @@ header h1{
     transform: translate(-50%, -50%);
     text-align: center;
 }
-.iconUser{
+.avatar{
     position: relative;
     width: 50px;
     height: 50px;
     background-color: gold;
     border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    height: 80%;
+    transform: scaleX(-1);
 }
-.iconUser p{
+.dropUser{
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 60px;
+    right: 0;
+    width: 300px;
+    background-color: var(--bgHeader);
+    border-radius: 0 0 0 16px;
+}
+.dropUser .cardRolUser{
+    background-color: #00000030;
+}
+.dropUser .cardRolUser .rol{
+    width: 100%;
+    height: 36px;
     text-align: center;
-    margin: 0;
-    font-family: "iconUser";
-    font-size: 30px;
+    text-justify: center;
+}
+.dropUser .cardRolUser .rol p{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    font-weight: 500;
+}
+.dropUser .avatarContent{
+    display: flex;
+    justify-content: center;
+    margin: 6px;
+}
+.dropUser .avatarContent .avatar{
+    width: 100px;
+    height: 100px;
 }

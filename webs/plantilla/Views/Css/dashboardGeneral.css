@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@font-face {
+    font-family: "iconUser";
+    src: url(./monof55.ttf);
+}
+:root{
+    --bgHeader: #45abff;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
