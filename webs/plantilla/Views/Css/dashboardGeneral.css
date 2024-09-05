@@ -1,10 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
-@font-face {
-    font-family: "iconUser";
-    src: url(./monof55.ttf);
-}
 :root{
-    --bgHeader: #45abff;
+    --color0: #eeeeee;
+    --color1: #f0a818;
+    --color2: #7890a8;
+    --color3: #304878;
+    --color4: #181848;
+    --color5: #000000;
+
+    --bgHeader: var(--color3);
+    --bgDropUser: var(--color4);
+    --bgDropNotis: var(--color3);
+    --notisColor: var(--color1);
+    --notisColorHover: var(--color0);
+    --bgcardNoti: var(--color4);
+    --letraCardNoti: var(--color0);
+    --bgCardRol: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
+    --bgAvatar: gold;
+    --logoutColor: #ff2525;
+    --notificacionColor: red;
 }
 *{
     margin: 0;

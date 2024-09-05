@@ -1,4 +1,4 @@
-header{
+.header{
     position: fixed;
     background-color: var(--bgHeader);
     height: 60px;
@@ -12,7 +12,7 @@ header{
     user-select: none;
     font-family: "Roboto Mono";
 }
-header img{
+.header .logo{
     position: relative;
     width: 50px;
     height: 50px;
@@ -20,11 +20,12 @@ header img{
     left: 5px;
     border-radius: 10px;
 }
-header h1{
+.header h1{
     margin: 0;
     place-content: center;
     text-align: center;
     font-size: 30px;
+    color: #fff;
 }
 .irLanding{
     position: relative;
@@ -33,7 +34,7 @@ header h1{
     position: relative;
     height: 45px;
     border-radius: 8px;
-    background-color: rgb(255, 231, 98);
+    background-color: var(--color1);
     top: 50%;
     transform: translateY(-50%);
 }
@@ -53,8 +54,8 @@ header h1{
 .hiUser .content{
     position: relative;
     height: 45px;
-    border-radius: 15px;
-    background-color: rgb(255, 231, 98);
+    border-radius: 8px;
+    background-color: var(--color1);
     top: 50%;
     transform: translateY(-50%);
     width: fit-content;
@@ -68,37 +69,134 @@ header h1{
     transform: translateY(-50%);
     font-size: 18px;
 }
-.fa-bell{
+.notificaciones{
+    position: relative;
+}
+.notificaciones .fa-bell{
+    height: 0;
     position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
-.fa-bell .cantNoti{
-    position: absolute;
-    height: 1rem;
-    width: auto;
+.notificaciones .fa-bell .cantNoti{
+    display: none;
+    position: relative;
+    background-color: var(--notificacionColor);
     border-radius: 50px;
-    background-color: red;
-    right: -8px;
-    top: -25px;
-    padding: 3px;
+    width: fit-content;
+    height: fit-content;
+    padding: 10px 5px;
+    top: -28px;
+    left: 8px;
 }
-.fa-bell .cantNoti p{
-    color: white;
-    margin: 0;
-    font-size: 11px;
+.notificaciones .fa-bell .cantNoti p{
+    display: block;
+    color: #fff;
+    font-size: 12px;
+    height: fit-content;
+}
+.dropNotis{
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: var(--bgDropNotis);
+    padding: 6px;
+    border-radius: 0 0 16px 16px;
+    width: 400px;
+}
+.dropNotis .shadow{
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    left: 0;
+    top: -10px;
+    box-shadow: 0px 5px 5px 0px #3333337f;
+}
+.dropNotis header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 5px;
+    margin-bottom: 12px;
+}
+.dropNotis header .titulo{
+    color: var(--notisColor);
+    font-size: 24px;
+}
+.dropNotis header .verTodas{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 8px;
+    background-color: var(--notisColor);
+    padding: 6px;
+    border-radius: 4px;
+    transition: 125ms;
+}
+.dropNotis header .verTodas:hover{
+    background-color: var(--notisColorHover);
+    box-shadow: 4px 4px 0px 0px #f0a818bf;
+}
+.dropNotis header .verTodas:active{
+    transition: 75ms;
+    background-color: var(--notisColor);
+    opacity: .75;
+    box-shadow: 4px 4px 0px 0px #222222bf;
+}
+.dropNotis .notisResult{
+    display: flex;
+    flex-direction: row;
+}
+.dropNotis .notisResult .cardNoti{
     position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+    background-color: var(--bgcardNoti);
+    color: var(--letraCardNoti);
+    display: grid;
+    grid-template-columns: 60px auto;
+    grid-column-gap: 8px;
+    justify-items: stretch;
+    align-items: stretch;
+    width: 100%;
+    padding: 4px;
+    border-radius: 8px;
+}
+.dropNotis .notisResult .cardNoti .avatar{
+    width: 60px;
+    height: auto;
+}
+.dropNotis .notisResult .cardNoti .info{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.dropNotis .notisResult .cardNoti .info .datos{
+    display: flex;
+    justify-content: space-between;
+}
+.dropNotis .notisResult .cardNoti .info .datos .nombre{
+    font-size: 18px;
+    color: #eee;
+}
+.dropNotis .notisResult .cardNoti .info .datos .fecha{
+    font-size: 14px;
+    font-weight: 400;
+    color: #bbb;
+}
+.dropNotis .notisResult .cardNoti .info .asunto {
+    color: #ddd;
+    font-size: 14px;
+    font-weight: 700;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Corrección */
+    white-space: nowrap; /* Evita que el texto pase a la siguiente línea */
+    max-width: 100%; /* O define un ancho específico */
 }
 .avatar{
     position: relative;
     width: 50px;
-    height: 50px;
-    background-color: gold;
+    height: auto;
+    background-color: var(--bgAvatar);
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -106,22 +204,37 @@ header h1{
     height: 80%;
     transform: scaleX(-1);
 }
+.userDrop .contentAvatar{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 .dropUser{
+    display: none;
     position: absolute;
     top: 60px;
     right: 0;
-    width: 300px;
-    background-color: var(--bgHeader);
+    width: 400px;
+    background-color: var(--bgDropUser);
     border-radius: 0 0 0 16px;
+    border-left: #686868 solid 1px;
+    border-bottom: #686868 solid 1px;
 }
 .dropUser .cardRolUser{
-    background-color: #00000030;
+    background: var(--bgCardRol);
+    padding: 8px;
 }
 .dropUser .cardRolUser .rol{
-    width: 100%;
+    width: fit-content;
+    padding: 0 20px;
     height: 36px;
-    text-align: center;
-    text-justify: center;
+    background-color: #33333360;
+    border-radius: 6px;
+    color: var(--color1);
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
 .dropUser .cardRolUser .rol p{
     position: relative;
@@ -138,4 +251,83 @@ header h1{
 .dropUser .avatarContent .avatar{
     width: 100px;
     height: 100px;
+}
+.dropUser .cardRolUser .nombre{
+    text-align: center;
+    font-size: 26px;
+}
+.dropUser .cardRolUser .email{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-size: 14px;
+    gap: 4px;
+}
+.dropUser .cardRolUser .email:hover i{
+    animation: infinite ease-out emailAnimation 750ms;
+}
+@keyframes emailAnimation {
+    50%{
+        color: #806c00;
+        font-size: 16px;
+    }
+    100%{
+        color: black;
+        font-size: 14px;
+    }
+}
+.dropUser hr{
+    position: relative;
+    background-color: #333;
+    height: 2px;
+    border: none;
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 30px;
+}
+.dropUser .opciones{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 8px;
+}
+.dropUser .opciones .opcion{
+    background-color: #88888890;
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 125ms;
+    color: #eee;
+}
+.dropUser .opciones .opcion:hover{
+    background-color: #eee;
+    transform: scale(1.015);
+    color: #111;
+    box-shadow: 4px 4px 0px 0px #ffd700bf;
+}
+.dropUser .opciones .opcion:active{
+    background-color: #111;
+    color: #eee;
+    border-top: #666 solid 1px;
+    border-left: #666 solid 1px;
+}
+.dropUser .opciones .logout i{
+    color: var(--logoutColor);
+}
+.dropUser .opciones .logout:hover,
+.dropUser .opciones .logout:hover i{
+    color: #000;
+}
+.dropUser .opciones .logout:hover{
+    background-color: var(--logoutColor);
+    box-shadow: 4px 4px 0px 0px #000000bf;
+}
+.dropUser .opciones .logout:active,
+.dropUser .opciones .logout:active i{
+    background-color: #222;
+    color: var(--logoutColor);
 }

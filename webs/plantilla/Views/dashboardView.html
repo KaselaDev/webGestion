@@ -6,40 +6,74 @@
 
   <link rel="stylesheet" href="./Css/dashboardGeneral.css">
   <link rel="stylesheet" href="./Css/header.css">
-  <header>
-    <img src="./Imagenes/logo.jpg" alt="Cargando logo...">
+  <header class="header">
+    <img class="logo" src="./Imagenes/logo.jpg" alt="Cargando logo...">
     <div class="irLanding"><div class="content"><h4>Ver Landing page</h4></div></div>
     <h1>Dashboard 'Kasela3D'</h1>
     <div class="hiUser"><div class="content"><h4>Hola, KaselaDev</h4></div></div>
-    <div class="Notificaciones"><i class="fa-solid fa-bell fa-2xl"><div class="cantNoti"><p>+9</p></div></i></div>
+    <div class="notificaciones" id="notificaciones">
+      <i class="fa-solid fa-bell fa-2xl">
+      <div id="globoNoti" class="cantNoti">
+        <p></p>
+      </div>
+      </i>
+      <div class="dropNotis" id="dropNotis">
+        <div class="shadow"></div>
+        <header>
+          <h3 class="titulo">Notificaciones</h3>
+          <div class="verTodas">
+            <i class="fa-solid fa-envelope-open-text"></i>
+            <h4>Ver todas</h4>
+          </div>
+        </header>
+        <div class="notisResult">
+          <emplate class="cardNoti">
+            <img class="avatar" src="https://robohash.org/kg?set=set4" alt="Cargando...">
+            <div class="info">
+              <div class="datos">
+                <h4 class="userName">Daniel Martinez</h4>
+                <h4 class="fecha">Mie, 08:36hs</h4>
+              </div>
+              <p class="asunto" id="asunto">Estoy presente en la sucursal 1 con un retraso importante por paro de de colectivos</p>
+            </div>
+          </emplate>
+        </div>
+      </div>
+    </div>
     <div class="userDrop">
-      <img class="avatar" src="https://robohash.org/kg?set=set4" alt="Cargando...">
-      <div class="dropUser">
+      <div class="contentAvatar">
+        <img class="avatar" id="botonUser" src="https://robohash.org/kg?set=set4" alt="Cargando...">
+      </div>
+      <div class="dropUser" id="dropUser">
         <div class="cardRolUser">
           <div class="rol"><p>Admin</p></div>
           <div class="avatarContent">
             <img class="avatar" src="https://robohash.org/kg?set=set4" alt="Cargando...">
           </div>
-          <span class="nombre">Santiago Casellas</span>
-          <span class="email">santiagocasellas2005@gmail.com</span>
-          <span class=""></span>
+          <span class="nombre"><p>Santiago Casellas</p></span>
+          <span class="email">
+            <i class="fa-solid fa-envelope"></i>
+            <p>santiagocasellas2005@gmail.com</p>
+          </span>
         </div>
+        <hr>
         <div class="opciones">
           <span class="opcion">
-            <i></i>
-            Configurar usuario
+            <i class="fa-solid fa-user-gear"></i>
+            <p>Configurar usuario</p>
           </span>
           <span class="opcion">
-            <i></i>
-            Configurar Web
+            <i class="fa-solid fa-gear"></i>
+            <p>Configurar Web</p>
           </span>
-          <span class="opcion">
-            <i></i>
-            Cerrar sesion
+          <span class="opcion logout">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <p>Cerrar sesion</p>
           </span>
         </div>
       </div>
     </div>
   </header>
+  <script type="text/javascript" src="./JavaScript/header.js"></script>
 </body>
 </html>
