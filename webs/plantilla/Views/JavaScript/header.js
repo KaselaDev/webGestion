@@ -1,81 +1,84 @@
 // temporal
 const notis = [
     {
-        icono: "fa-solid fa-envelope",
+        icono: "915695",
         nombre: "Juan",
         apellido: "Pérez",
         asunto: "Nueva actualización disponible",
-        fecha: "2024-08-01"
+        fecha: "2024-08-01 19:16:59"
     },{
-        icono: "fa-solid fa-bell",
+        icono: "91298",
         nombre: "María",
         apellido: "García",
         asunto: "Recordatorio de reunión",
-        fecha: "2024-08-02"
+        fecha: "2024-08-02 15:36:54"
     },{
-        icono: "fa-solid fa-exclamation-circle",
-        nombre: "Carlos",
+        icono: "516516",
+        nombre: "Alberto",
         apellido: "Fernández",
-        asunto: "Error en el sistema",
-        fecha: "2024-08-03"
-    },{
-        icono: "fa-solid fa-info-circle",
-        nombre: "Ana",
-        apellido: "Martínez",
-        asunto: "Información importante",
-        fecha: "2024-08-04"
-    },{
-        icono: "fa-solid fa-comment",
-        nombre: "Luis",
-        apellido: "Rodríguez",
-        asunto: "Nuevo comentario en tu publicación",
-        fecha: "2024-08-05"
-    },{
-        icono: "fa-solid fa-heart",
-        nombre: "Sofía",
-        apellido: "López",
-        asunto: "Alguien ha dado like a tu foto",
-        fecha: "2024-08-06"
-    },{
-        icono: "fa-solid fa-calendar-check",
-        nombre: "Pedro",
-        apellido: "Gómez",
-        asunto: "Evento programado para mañana",
-        fecha: "2024-08-07"
-    },{
-        icono: "fa-solid fa-share",
-        nombre: "Lucía",
-        apellido: "Hernández",
-        asunto: "Tu publicación ha sido compartida",
-        fecha: "2024-08-08"
-    },{
-        icono: "fa-solid fa-thumbs-up",
-        nombre: "Javier",
-        apellido: "Díaz",
-        asunto: "Alguien ha reaccionado a tu comentario",
-        fecha: "2024-08-09"
-    },{
-        icono: "fa-solid fa-file-alt",
-        nombre: "Marta",
-        apellido: "Ruiz",
-        asunto: "Nuevo documento compartido contigo",
-        fecha: "2024-08-10"
+        asunto: "Desmayo a su compañera",
+        fecha: "2024-08-03 21:42:30"
     }
 ];
 
-let estado = false;
+function convertirFecha(fechaStr) {
+    const diasSemana = ["Dom", "Lun", "Mar", "Mie", "Jue", "Vie", "Sab"];
+
+    const fecha = new Date(fechaStr);
+
+    const diaSemana = diasSemana[fecha.getDay()];
+    const horas = fecha.getHours().toString().padStart(2, '0');
+    const minutos = fecha.getMinutes().toString().padStart(2, '0');
+
+    const horaFormateada = `${horas}:${minutos}hs`;
+
+    return `${diaSemana}, ${horaFormateada}`;
+}
+
+let estadoUser = false;
 botonUser.addEventListener('click',() => {
-    estado = (estado) ? false : true;
-    (estado)
-    ?(dropUser.style.display = 'block')
-    :(dropUser.style.display = 'none')
+    if (estadoUser) {
+        dropUser.classList.add('hidden')
+        dropUser.classList.remove('show')
+    }else{
+        dropUser.classList.remove('hidden')
+        dropUser.classList.add('show')
+    }
+    estadoUser = !estadoUser
 })
 
 if (notis.length > 0) {
     globoNoti.style.display = "block";
-    globoNoti.children[0].innerText = (notis.length+99 >= 100)?("+99"):(notis.length);
+    globoNoti.children[0].innerText = (notis.length >= 100)?("+99"):(notis.length);
 }
 
-notificaciones.addEventListener('click',() => {
-    console.log("ah despasito");
+let estadoNoti = false
+btnNoti.addEventListener('click',() => {
+    if (estadoNoti) {
+        notificaciones.querySelector('.dropNotis').classList.add('hidden')
+        notificaciones.querySelector('.dropNotis').classList.remove('show')
+        notificaciones.querySelectorAll('.cardNoti').forEach(card => {
+            card.classList.remove('show')
+            card.classList.add('hidden')
+        })
+    }else{
+        notificaciones.querySelector('.dropNotis').classList.remove('hidden')
+        notificaciones.querySelector('.dropNotis').classList.add('show')
+        notificaciones.querySelectorAll('.cardNoti').forEach(card => {
+            card.classList.remove('hidden')
+            card.classList.add('show')
+        })
+    }
+    estadoNoti = !estadoNoti
+})
+
+notis.forEach(e => {
+    const template = templateCardNoti.content.children[0];
+    template.querySelector('.avatar').src = `https://robohash.org/${e.icono}?set=set4`;
+    template.querySelector('.userName').innerText = e.nombre+" "+e.apellido;
+    template.querySelector('.fecha').innerText = convertirFecha(e.fecha+"")
+    template.querySelector('.asunto').innerText = e.asunto
+    
+    const card = document.importNode(template, true);
+    notisResult.appendChild(card)
 })

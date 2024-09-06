@@ -11,6 +11,7 @@
     align-items: stretch;
     user-select: none;
     font-family: "Roboto Mono";
+    z-index: 10;
 }
 .header .logo{
     position: relative;
@@ -81,14 +82,14 @@
 }
 .notificaciones .fa-bell .cantNoti{
     display: none;
-    position: relative;
+    position: absolute;
     background-color: var(--notificacionColor);
     border-radius: 50px;
     width: fit-content;
     height: fit-content;
     padding: 10px 5px;
     top: -28px;
-    left: 8px;
+    right: 0;
 }
 .notificaciones .fa-bell .cantNoti p{
     display: block;
@@ -97,6 +98,7 @@
     height: fit-content;
 }
 .dropNotis{
+    display: block;
     position: absolute;
     top: 60px;
     right: 0;
@@ -104,6 +106,28 @@
     padding: 6px;
     border-radius: 0 0 16px 16px;
     width: 400px;
+    border: #000 solid 1px;
+    transform: translateY(-50%) scaleY(0);
+
+}
+.notificaciones > .show{
+    animation: showDropNoti 300ms ease-in-out forwards;
+}
+@keyframes showDropNoti {
+    100%{
+        transform: translateY(-0%) scaleY(1);
+    }
+}
+.notificaciones > .hidden{
+    animation: hiddenDropNoti 300ms ease-in-out forwards;
+}
+@keyframes hiddenDropNoti {
+    0%{
+        transform: translateY(-0%) scaleY(1);
+    }
+    100%{
+        transform: translateY(-50%) scaleY(0);
+    }
 }
 .dropNotis .shadow{
     position: absolute;
@@ -145,24 +169,59 @@
     box-shadow: 4px 4px 0px 0px #222222bf;
 }
 .dropNotis .notisResult{
+    width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    gap: 6px;
 }
 .dropNotis .notisResult .cardNoti{
     position: relative;
     background-color: var(--bgcardNoti);
     color: var(--letraCardNoti);
     display: grid;
-    grid-template-columns: 60px auto;
+    grid-template-columns: max-content auto;
     grid-column-gap: 8px;
     justify-items: stretch;
     align-items: stretch;
     width: 100%;
     padding: 4px;
     border-radius: 8px;
+    transform: scaleX(0);
+    opacity: 0;
+}
+.dropNotis .notisResult > .show{
+    animation: showCardNoti 225ms ease-in-out forwards;
+    animation-delay: 150ms;
+}
+@keyframes showCardNoti {
+    50%{
+        transform: translateX(-1%) scaleX(1);
+        opacity: .5;
+    }
+    100%{
+        transform: translateX(0) scaleX(1);
+        opacity: 1;
+    }
+}
+.dropNotis .notisResult > .hidden{
+    animation: hiddenCardNoti 225ms ease-in-out forwards;
+}
+@keyframes hiddenCardNoti {
+    0%{
+        transform: translateX(0) scaleX(1);
+        opacity: 1;
+    }
+    50%{
+        transform: translateX(0) scaleX(1);
+        opacity: .5;
+    }
+    100%{
+        transform: translateX(-1%) scaleX(1);
+        opacity: 0;
+    }
 }
 .dropNotis .notisResult .cardNoti .avatar{
-    width: 60px;
+    width: 70px;
     height: auto;
 }
 .dropNotis .notisResult .cardNoti .info{
@@ -187,10 +246,11 @@
     color: #ddd;
     font-size: 14px;
     font-weight: 700;
+    display: -webkit-box; 
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
     overflow: hidden;
-    text-overflow: ellipsis; /* Corrección */
-    white-space: nowrap; /* Evita que el texto pase a la siguiente línea */
-    max-width: 100%; /* O define un ancho específico */
+    text-overflow: ellipsis;
 }
 .avatar{
     position: relative;
@@ -211,7 +271,6 @@
     transform: translate(-50%, -50%);
 }
 .dropUser{
-    display: none;
     position: absolute;
     top: 60px;
     right: 0;
@@ -220,6 +279,37 @@
     border-radius: 0 0 0 16px;
     border-left: #686868 solid 1px;
     border-bottom: #686868 solid 1px;
+    transform: scaleX(0);
+    opacity: 0;
+}
+.dropUser.show{
+    display: block;
+    animation: showDropUser 300ms linear forwards;
+    animation-delay: 150ms;
+}
+@keyframes showDropUser {
+    50%{
+        transform: translateX(50%) scaleX(1);
+        opacity: .5;
+    }
+    100%{
+        transform: translateX(0) scaleX(1);
+        opacity: 1;
+    }
+}
+.dropUser.hidden{
+    animation: hiddenDropUser 300ms linear forwards;
+}
+@keyframes hiddenDropUser {
+    0%{
+        transform: translateX(0) scaleX(1);
+        opacity: 1;
+    }
+    100%{
+        transform: translateX(50%) scaleX(1);
+        opacity: 0;
+        visibility: hidden;
+    }
 }
 .dropUser .cardRolUser{
     background: var(--bgCardRol);
@@ -328,6 +418,8 @@
 }
 .dropUser .opciones .logout:active,
 .dropUser .opciones .logout:active i{
-    background-color: #222;
     color: var(--logoutColor);
+}
+.dropUser .opciones .logout:active{
+    background-color: #222;
 }
