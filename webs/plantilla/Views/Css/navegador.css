@@ -1,0 +1,8 @@
+.navegador{
+    background-color: var(--bgNavegador);
+    color: var(--navegadorColor);
+    width: 30%;
+    resize: horizontal;
+    overflow: auto;
+    
+}

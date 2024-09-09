@@ -1,0 +1,83 @@
+.navContent{
+    position: relative;
+    display: flex;
+}
+.navContent .navegador{
+    background-color: var(--bgNavegador);
+    color: var(--navegadorColor);
+    min-width: 50px;
+    max-width: 300px;
+    bottom: 0;
+    position: sticky;
+    display: grid;
+    grid-template-rows: fit-content auto fit-content;
+    justify-items: stretch;
+    align-items: stretch;
+}
+.navContent .resizer {
+    width: 10px;
+    height: 100%;
+    position: relative;
+    top: 0;
+    right: 0;
+    cursor: ew-resize;
+    background-color: var(--bgBarraDivisora);
+}
+.navContent .navegador > .titulo{
+    text-align: center;
+    font-size: 28px;
+    font-weight: bolder;
+    padding: 10px 0;
+    width: 100%;
+}
+.navContent .navegador .opciones{
+    background-color: #4b0606;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    overflow-y: scroll;
+    height: fit-content;
+    position: relative;
+    max-height: 500px;
+}
+.navContent .navegador .opciones .opcion{
+    position: relative;
+    display: grid;
+    grid-template-columns: 30px max-content;
+    grid-column-gap: 6px;
+    justify-items: stretch;
+    align-items: stretch;
+    font-size: 26px;
+}
+.navContent .navegador .opciones .opcion .icon{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.navContent .navegador .stockContent{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+}
+.navContent .navegador .stockContent .stock{
+    background-color: var(--bgStockCard);
+    color: black;
+    width: 95%;
+    height: 95%;
+    padding: 8px;
+    border-radius: 8px;
+}
+.navContent .navegador .stockContent .stock header > .titulo{
+    font-size: 28px;
+}
+.navContent .navegador .stockContent .stock .resultStock{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.navContent .navegador .stockContent .stock .resultStock .cardStock{
+    border: solid black;
+}

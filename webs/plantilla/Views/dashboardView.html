@@ -6,6 +6,7 @@
 
   <link rel="stylesheet" href="./Css/dashboardGeneral.css">
   <link rel="stylesheet" href="./Css/header.css">
+  <link rel="stylesheet" href="./Css/navegador.css">
   <header class="header">
     <img class="logo" src="./Imagenes/logo.jpg" alt="Cargando logo...">
     <div class="irLanding"><div class="content"><h4>Ver Landing page</h4></div></div>
@@ -27,7 +28,7 @@
           </div>
         </header>
         <div class="notisResult" id="notisResult">
-          <template id="templateCardNoti" style="width: 100%">
+          <template id="templateCardNoti">
             <div class="cardNoti">
               <img class="avatar" alt="Cargando...">
             <div class="info">
@@ -77,8 +78,85 @@
     </div>
   </header>
 
-  <nav class="navegador">
 
+  <nav class="navegador">
+    <h2 class="titulo">Navegador</h2>
+    <div class="opciones">
+      <div href="" class="opcion">
+        <i class="fa-regular fa-calendar-days"></i>
+        <p>Turnos</p>
+      </div>
+      <div href="" class="opcion">
+        <i class="fa-solid fa-file-invoice-dollar"></i>
+        <p>Pedidos</p>
+      </div>
+      <div href="" class="opcion">
+        <i class="fa-solid fa-bell-concierge"></i>
+        <p>Servicios</p>
+      </div>
+      <div href="" class="opcion">
+        <i class="fa-solid fa-child"></i>
+        <p>Clientes</p>
+      </div>
+      <div href="" class="opcion">
+        <i class="fa-solid fa-users-gear"></i>
+        <p>Empleados</p>
+      </div>
+      <div href="" class="opcion">
+        <i class="fa-solid fa-chart-line"></i>
+        <p>Estadisticas</p>
+      </div>
+    </div>
+    <div class="stock">
+      <header>
+        <h3>Stock</h3>
+        <span class="verStock">
+          <i class="fa-solid fa-boxes-stacked"></i>
+          <h4>Ver stock</h4>
+        </span>
+      </header>
+      <div class="resultStock">
+        <emplate>
+          <div class="cardStock">
+            <div class="productoInfo">
+              <h3 class="nombre">Carne</h3>
+              <div class="barra">
+                <div class="barraCant"></div>
+              </div>
+              <h3 class="porcentaje">90.87%</h3>
+            </div>
+          </div>
+
+          <div class="cardStock">
+            <div class="productoInfo">
+              <h3 class="nombre">Carne</h3>
+              <div class="barra">
+                <div class="barraCant"></div>
+              </div>
+              <h3 class="porcentaje">90.87%</h3>
+            </div>
+          </div>
+          <div class="cardStock">
+            <div class="productoInfo">
+              <h3 class="nombre">Carne</h3>
+              <div class="barra">
+                <div class="barraCant"></div>
+              </div>
+              <h3 class="porcentaje">90.87%</h3>
+            </div>
+          </div>
+          <div class="cardStock">
+            <div class="productoInfo">
+              <h3 class="nombre">Carne</h3>
+              <div class="barra">
+                <div class="barraCant"></div>
+              </div>
+              <h3 class="porcentaje">90.87%</h3>
+            </div>
+          </div>
+        </emplate>
+      </div>
+    </div>
   </nav>
   <script type="text/javascript" src="./JavaScript/header.js"></script>
 </body>

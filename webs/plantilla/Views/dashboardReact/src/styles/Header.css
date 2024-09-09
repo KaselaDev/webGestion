@@ -10,7 +10,6 @@
     justify-items: stretch;
     align-items: stretch;
     user-select: none;
-    font-family: "Roboto Mono";
     z-index: 10;
 }
 
@@ -74,29 +73,34 @@
 .notificaciones{
     position: relative;
 }
-.notificaciones .fa-bell{
-    height: 0;
+.notificaciones .iconContainer{
+    width: 100%;
+    height: 100%;
+}
+.notificaciones .iconContainer .fa-bell{
+    height: 35px;
     position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
-.notificaciones .fa-bell .cantNoti{
-    display: none;
+.notificaciones .iconContainer .cantNoti{
+    /* display: none; */
     position: absolute;
     background-color: var(--notificacionColor);
     border-radius: 50px;
     width: fit-content;
     height: fit-content;
-    padding: 10px 5px;
-    top: -28px;
-    right: 0;
+    padding: 0 5px;
+    top: 25%;
+    left: 65%;
+    transform: translate(-50%, -50%);
 }
-.notificaciones .fa-bell .cantNoti p{
-    display: block;
+.notificaciones .iconContainer .cantNoti p{
     color: #fff;
-    font-size: 12px;
-    height: fit-content;
+    font-size: 14px;
+    margin: 0;
+    font-weight: bold;
 }
 .dropNotis{
     display: block;
@@ -286,10 +290,9 @@
 .dropUser.show{
     display: block;
     animation: showDropUser 300ms linear forwards;
-    animation-delay: 150ms;
 }
 @keyframes showDropUser {
-    50%{
+    0%{
         transform: translateX(50%) scaleX(1);
         opacity: .5;
     }
@@ -354,7 +357,7 @@
     font-size: 14px;
     gap: 4px;
 }
-.dropUser .cardRolUser .email:hover i{
+.dropUser .cardRolUser .email:hover .icon{
     animation: infinite ease-out emailAnimation 750ms;
 }
 @keyframes emailAnimation {

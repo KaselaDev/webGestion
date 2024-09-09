@@ -7,6 +7,9 @@
     --color4: #181848;
     --color5: #000000;
 
+    /* Generales */
+    --Fuente: "Roboto Mono";
+
     /* header */
     --bgHeader: var(--color3);
     --bgDropUser: var(--color4);
@@ -23,13 +26,27 @@
     /* navegador */
     --bgNavegador: var(--color4);
     --navegadorColor: var(--color0);
+    --bgBarraDivisora: #645b4e;
+    --bgStockCard: var(--color0);
 }
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
+#root{
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    font-family: "Roboto Mono";
+}
+.mainGeneral{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex: 1;
+    justify-content: stretch;
+    align-items: stretch;
 }
